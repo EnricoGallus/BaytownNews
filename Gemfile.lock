@@ -101,7 +101,9 @@ GEM
     concurrent-ruby (1.2.2)
     crass (1.0.6)
     date (3.3.3)
-    debug (1.7.1)
+    debug (1.7.0)
+      irb (>= 1.5.0)
+      reline (>= 0.3.1)
     erb_lint (0.3.1)
       activesupport
       better_html (>= 2.0.1)
@@ -119,6 +121,9 @@ GEM
     importmap-rails (1.1.5)
       actionpack (>= 6.0.0)
       railties (>= 6.0.0)
+    io-console (0.6.0)
+    irb (1.6.3)
+      reline (>= 0.3.0)
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
@@ -192,6 +197,8 @@ GEM
     rainbow (3.1.1)
     rake (13.0.6)
     regexp_parser (2.7.0)
+    reline (0.3.2)
+      io-console (~> 0.5)
     rexml (3.2.5)
     rubocop (1.48.1)
       json (~> 2.3)
@@ -265,7 +272,7 @@ DEPENDENCIES
   bootstrap (~> 5.2)
   bundler-audit
   capybara
-  debug (~> 1.7.0)
+  debug (= 1.7.0)
   erb_lint
   importmap-rails
   jbuilder
