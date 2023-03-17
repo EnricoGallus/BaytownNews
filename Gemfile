@@ -48,13 +48,6 @@ gem 'bootsnap', require: false
 gem 'bootstrap', '~> 5.2'
 gem 'sassc-rails'
 
-# Security
-
-gem 'bundler-audit', require: false
-gem 'erb_lint', require: false
-gem 'rubocop', require: false
-gem 'rubocop-rails', require: false
-
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
@@ -65,6 +58,11 @@ group :development, :test do
 end
 
 group :development do
+  gem 'brakeman'
+  gem 'bundler-audit', require: false
+  gem 'erb_lint', require: false
+  gem 'rubocop', require: false
+  gem 'rubocop-rails', require: false
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem 'web-console'
 
