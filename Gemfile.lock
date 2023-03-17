@@ -265,7 +265,7 @@ DEPENDENCIES
   bootstrap (~> 5.2)
   bundler-audit
   capybara
-  debug
+  debug (~> 1.7.0)
   erb_lint
   importmap-rails
   jbuilder
