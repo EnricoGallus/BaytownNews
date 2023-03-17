@@ -24,4 +24,4 @@ jobs:
       - name: Bundler audit
         run: bundle exec bundler-audit
       - name: Run tests
-        run: rails test
+        run: bundle exec rake
