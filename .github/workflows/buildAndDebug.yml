@@ -32,4 +32,6 @@ jobs:
       - name: Bundler audit
         run: bundle exec bundler-audit
       - name: Run tests
-        run: bundle exec rake
+        run: |
+          bin/rails db:create db:migrate
+          bundle exec rake
