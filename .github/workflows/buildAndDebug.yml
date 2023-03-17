@@ -1,0 +1,29 @@
+name: Build and Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+      - name: Rubocop
+        run: rubocop
+      - name: erb linter
+        run: erblint --lint-all --enable-all-linters
+      - name: Brakeman
+        run: brakeman
+      - name: Bundler audit
+        run: bundler-audit
+      - name: Run tests
+        run: rails test
