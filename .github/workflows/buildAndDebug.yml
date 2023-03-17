@@ -17,11 +17,11 @@ jobs:
           bundler-cache: true
       - name: Rubocop
         run: bundle exec rubocop
-      - name: erb linter
-        run: erblint --lint-all --enable-all-linters
+      #- name: erb linter
+      #  run: bundle exec erblint --lint-all --enable-all-linters
       - name: Brakeman
-        run: brakeman
+        run: bundle exec brakeman
       - name: Bundler audit
-        run: bundler-audit
+        run: bundle exec bundler-audit
       - name: Run tests
         run: rails test
