@@ -1,0 +1,16 @@
+<h1>Editions</h1>
+
+<dl>
+  <dt>Title:</dt>
+  <dd><%= @edition.title %></dd>
+  <dt>Desc:</dt>
+  <dd><%= @edition.desc %></dd>
+  <dt>Number:</dt>
+  <dd><%= @edition.number %></dd>
+  <dt>Distribution:</dt>
+  <dd><%= @edition.distribution %></dd>
+  <dt>Issue:</dt>
+  <dd><%= @edition.issue %></dd>
+</dl>
+<%= link_to 'Edit', edit_edition_path(@edition) %> |
+<%= link_to 'Back', editions_path %>

@@ -1,0 +1,27 @@
+<div id="<%= dom_id edition %>">
+  <p>
+    <strong>Title:</strong>
+    <%= edition.title %>
+  </p>
+
+  <p>
+    <strong>Desc:</strong>
+    <%= edition.desc %>
+  </p>
+
+  <p>
+    <strong>Number:</strong>
+    <%= edition.number %>
+  </p>
+
+  <p>
+    <strong>Distribution:</strong>
+    <%= edition.distribution %>
+  </p>
+
+  <p>
+    <strong>Issue:</strong>
+    <%= link_to edition.issue.filename, edition.issue if edition.issue.attached? %>
+  </p>
+
+</div>
