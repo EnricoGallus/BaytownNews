@@ -10,7 +10,7 @@
   <dt>Distribution:</dt>
   <dd><%= @edition.distribution %></dd>
   <dt>Issue:</dt>
-  <dd><%= @edition.issue %></dd>
+  <dd><%= image_tag @edition.issue.preview(resize_to_fit: [500, 500]) %></dd>
 </dl>
 <%= link_to 'Edit', edit_edition_path(@edition) %> |
 <%= link_to 'Back', editions_path %>

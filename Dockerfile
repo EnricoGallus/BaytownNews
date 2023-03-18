@@ -3,6 +3,11 @@ FROM ruby:3.2.1
 RUN curl -sL https://deb.nodesource.com/setup_18.x | bash -\
   && apt-get update -qq && apt-get install -qq --no-install-recommends \
     nodejs \
+    poppler-utils \
+    ffmpeg \
+    libgirepository1.0-dev \
+    libpoppler-glib-dev \
+    libvips42 \
   && apt-get upgrade -qq \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*\

@@ -1,13 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
-  desc: MyString
+issue297:
+  title: Issue297
+  desc: This issue is number 297
   number: 1
   distribution: 2023-03-18
 
-two:
-  title: MyString
-  desc: MyString
-  number: 1
+issue298:
+  title: Issue298
+  desc: This issue is number 298
+  number: 2
   distribution: 2023-03-18

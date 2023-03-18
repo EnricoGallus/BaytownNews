@@ -1,0 +1,9 @@
+issue_297:
+  name: issue297
+  record: one (Edition)
+  blob: issue_297_blob
+
+issue_298:
+  name: issue298
+  record: two (Edition)
+  blob: issue_298_blob
