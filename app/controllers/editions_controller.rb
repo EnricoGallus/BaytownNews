@@ -65,6 +65,6 @@ class EditionsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def edition_params
-      params.require(:edition).permit(:title, :desc, :number, :distribution, :issue)
+      params.require(:edition).permit(:title, :description, :number, :distribution, :issue)
     end
 end
