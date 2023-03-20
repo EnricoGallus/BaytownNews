@@ -49,24 +49,25 @@ gem 'bootstrap', '~> 5.2'
 gem 'sassc-rails'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-gem "image_processing", "~> 1.2"
+gem 'image_processing', '~> 1.2'
 # for pdf preview
 gem 'poppler'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   # fixed on 1.7.0 due to issue with dependencies on github-actions
+  gem 'debase', '0.2.5.beta2', require: false
   gem 'debug', '1.7.0', platforms: %i[mri mingw x64_mingw]
   gem 'ruby-debug-ide'
-  gem "debase", "0.2.5.beta2", require: false
 end
 
 group :development do
+  gem 'bootstrap_views_generator'
   gem 'brakeman'
   gem 'bundler-audit', require: false
-  gem 'bootstrap_views_generator'
   gem 'erb_lint', require: false
   gem 'rubocop', require: false
+  gem 'rubocop-capybara', require: false
   gem 'rubocop-rails', require: false
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem 'web-console'

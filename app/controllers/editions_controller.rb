@@ -1,5 +1,8 @@
+# frozen_string_literal: true
+
+# controller for edition handling
 class EditionsController < ApplicationController
-  before_action :set_edition, only: %i[ show edit update destroy ]
+  before_action :set_edition, only: %i[show edit update destroy]
 
   # GET /editions or /editions.json
   def index
@@ -7,8 +10,7 @@ class EditionsController < ApplicationController
   end
 
   # GET /editions/1 or /editions/1.json
-  def show
-  end
+  def show; end
 
   # GET /editions/new
   def new
@@ -16,8 +18,7 @@ class EditionsController < ApplicationController
   end
 
   # GET /editions/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /editions or /editions.json
   def create
@@ -25,7 +26,7 @@ class EditionsController < ApplicationController
 
     respond_to do |format|
       if @edition.save
-        format.html { redirect_to edition_url(@edition), notice: "Edition was successfully created." }
+        format.html { redirect_to edition_url(@edition), notice: t('edition.save.success') }
         format.json { render :show, status: :created, location: @edition }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +39,7 @@ class EditionsController < ApplicationController
   def update
     respond_to do |format|
       if @edition.update(edition_params)
-        format.html { redirect_to edition_url(@edition), notice: "Edition was successfully updated." }
+        format.html { redirect_to edition_url(@edition), notice: t('edition.update.success') }
         format.json { render :show, status: :ok, location: @edition }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,19 +53,20 @@ class EditionsController < ApplicationController
     @edition.destroy
 
     respond_to do |format|
-      format.html { redirect_to editions_url, notice: "Edition was successfully destroyed." }
+      format.html { redirect_to editions_url, notice: t('edition.delete.success') }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_edition
-      @edition = Edition.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def edition_params
-      params.require(:edition).permit(:title, :description, :number, :distribution, :issue)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_edition
+    @edition = Edition.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def edition_params
+    params.require(:edition).permit(:title, :description, :number, :distribution, :issue)
+  end
 end
