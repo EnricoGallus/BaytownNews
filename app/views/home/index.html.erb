@@ -1,1 +1,22 @@
-test
+<div class="col-6">
+  <h1>Last Issues</h1>
+  <% @editions.each do |edition| %>
+    <div class="card mb-3" style="max-width: 540px;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <%= render 'editions/editionIssuePreview', issue: edition.issue, size: 200 %>
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title"><%= edition.title %>></h5>
+            <p class="card-text">
+              <%= edition.description %>
+            </p>
+            <p class="card-text"><small class="text-muted"><%= edition.distribution %></small></p>
+            <%= link_to edition.issue.filename, rails_blob_path(edition.issue, disposition: 'attachment'), class: 'btn btn-primary' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

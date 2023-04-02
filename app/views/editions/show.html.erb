@@ -11,11 +11,7 @@
   <dd><%= @edition.distribution %></dd>
   <dt>Issue:</dt>
   <dd>
-    <% if @edition.issue.previewable? %>
-      <%= image_tag @edition.issue.preview(resize_to_fit: [500, 500]) %>
-    <% else %>
-      <%= @edition.issue.filename %>
-    <% end %>
+    <%= render 'editions/editionIssuePreview', issue: @edition.issue, size: 500 %>
   </dd>
 </dl>
 <%= link_to 'Edit', edit_edition_path(@edition) %> |
