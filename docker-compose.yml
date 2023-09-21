@@ -1,24 +1,27 @@
 version: '3'
 services:
   db:
-    image: postgres:15.2
+    image: postgres:15.4
     environment:
-      POSTGRES_PASSWORD: password
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
     ports:
       - "5432:5432"
     volumes:
       - ./tmp/db:/var/lib/postgresql/data
 
   web:
-    build: .
-    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    build:
+      context: .
+    command: bundle exec rails s -p 3000 -b '0.0.0.0'
     volumes:
       - .:/app
     ports:
       - "3000:3000"
-    environment:
-      DATABASE_HOST: db
-      DATABASE_USERNAME: postgres
-      DATABASE_PASSWORD: password
     depends_on:
       - db
+    environment:
+      RAILS_ENV: development
+
+volumes:
+  postgres_data:

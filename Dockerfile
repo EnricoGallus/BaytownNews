@@ -1,8 +1,9 @@
-FROM ruby:3.2.2
+FROM ruby:latest
 
-RUN curl -sL https://deb.nodesource.com/setup_18.x | bash -\
+RUN curl -sL https://deb.nodesource.com/setup_20.x | bash -\
   && apt-get update -qq && apt-get install -qq --no-install-recommends \
     nodejs \
+    postgresql-client \
     poppler-utils \
     ffmpeg \
     libgirepository1.0-dev \
@@ -13,18 +14,14 @@ RUN curl -sL https://deb.nodesource.com/setup_18.x | bash -\
   && rm -rf /var/lib/apt/lists/*\
   && npm install -g yarn@1
 
-RUN mkdir /app
 WORKDIR /app
 
-COPY Gemfile /app/Gemfile
-COPY Gemfile.lock /app/Gemfile.lock
+COPY Gemfile Gemfile.lock ./
 
-# Bundlerの不具合対策(1)
-RUN gem update --system
-RUN bundle update --bundler
-
+RUN gem install bundler
 RUN bundle install
-COPY . /app
+
+COPY . .
 
 # Add a script to be executed every time the container starts.
 COPY entrypoint.sh /usr/bin/
