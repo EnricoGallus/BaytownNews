@@ -56,8 +56,8 @@ gem 'poppler'
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   # fixed on 1.7.0 due to issue with dependencies on github-actions
-  #gem 'debase', '0.2.4.1'
-  #gem 'ruby-debug-ide'
+  # gem 'debase', '0.2.4.1'
+  # gem 'ruby-debug-ide'
   gem 'debug', '1.7.0', platforms: %i[mri mingw x64_mingw]
   gem 'rspec-rails', '~> 5.0'
 end
@@ -69,6 +69,7 @@ group :development do
   gem 'erb_lint', require: false
   gem 'rubocop', require: false
   gem 'rubocop-capybara', require: false
+  gem 'rubocop-discourse', require: false # without CI fails
   gem 'rubocop-rails', require: false
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem 'web-console'
