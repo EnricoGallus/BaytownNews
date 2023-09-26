@@ -31,7 +31,10 @@ jobs:
       - name: Bundler audit
         run: bundle exec bundler-audit
       - name: Install dependencies
-        run: apt-get install libpoppler-glib-dev
+        uses: awalsh128/cache-apt-pkgs-action@latest
+        with:
+          packages: libpoppler-glib-dev
+          version: 1.0
       - name: Run tests
         run: |
           bin/rails db:create db:migrate
