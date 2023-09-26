@@ -1,0 +1,18 @@
+<h1>Editions</h1>
+
+<dl>
+  <dt>Title:</dt>
+  <dd><%= @edition.title %></dd>
+  <dt>Desc:</dt>
+  <dd><%= @edition.description %></dd>
+  <dt>Number:</dt>
+  <dd><%= @edition.number %></dd>
+  <dt>Distribution:</dt>
+  <dd><%= @edition.distribution %></dd>
+  <dt>Issue:</dt>
+  <dd>
+    <%= render 'editions/editionIssuePreview', issue: @edition.issue, size: 500 %>
+  </dd>
+</dl>
+<%= link_to 'Edit', edit_edition_path(@edition) %> |
+<%= link_to 'Back', editions_path %>

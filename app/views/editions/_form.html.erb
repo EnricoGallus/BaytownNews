@@ -1,0 +1,27 @@
+<%= form_with(model: @edition, local: true) do |f| %>
+  <%= errors_for(@edition) %>
+
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :description %>
+    <%= f.rich_text_area :description, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :number %>
+    <%= f.number_field :number, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :distribution %>
+    <%= f.date_field :distribution, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :issue %>
+    <%= f.file_field :issue, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+<% end %>

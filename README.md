@@ -7,7 +7,7 @@ Things you may want to cover:
 
 * Ruby version
     
-``3.2.1``
+``3.2.2``
 Also specified in ``.ruby-version``
 
 * System dependencies

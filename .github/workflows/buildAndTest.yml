@@ -2,19 +2,21 @@ name: Build and Tests
 
 on:
   push:
-    branches: [ main ]
 
 jobs:
   test:
 
     runs-on: ubuntu-latest
 
+    env:
+      DATABASE_HOST: localhost
+
     services:
       postgres:
-        image: postgres:15.2
+        image: postgres:15.4
         env:
           POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: password
+          POSTGRES_PASSWORD: postgres
         ports: [ '5432:5432' ]
 
     steps:
@@ -31,7 +33,15 @@ jobs:
         run: bundle exec brakeman
       - name: Bundler audit
         run: bundle exec bundler-audit
-      - name: Run tests
-        run: |
-          bin/rails db:create db:migrate
-          bundle exec rake
+      - name: Install dependencies
+        uses: awalsh128/cache-apt-pkgs-action@latest
+        with:
+          packages: libpoppler-glib-dev
+          version: 1.0
+      - name: prepare database
+        run: bin/rails db:create db:migrate
+      - name: run unit-tests
+        run: bin/rails test
+      # todo chrome version not working, also no chrome in our container
+      #- name: run system-tests
+      #  run: bin/rails test:system

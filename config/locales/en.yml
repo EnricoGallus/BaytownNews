@@ -30,4 +30,12 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  nav:
+    editions: 'Editions'
+  edition:
+    save:
+      success: 'Edition was successfully created.'
+    update:
+      success: 'Edition was successfully updated.'
+    delete:
+      success: 'Edition was successfully destroyed.'

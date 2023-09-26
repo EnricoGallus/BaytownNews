@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+issue297:
+  title: Issue297
+  number: 1
+  distribution: 2023-03-18
+
+issue298:
+  title: Issue298
+  number: 2
+  distribution: 2023-03-18

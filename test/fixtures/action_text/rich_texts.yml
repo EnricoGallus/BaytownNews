@@ -1,0 +1,13 @@
+# one:
+#   record: name_of_fixture (ClassOfFixture)
+#   name: content
+#   body: <p>In a <i>million</i> stars!</p>
+issue297:
+  record: issue297 (Edition)
+  name: description
+  body: <p>This issue is number 297</p>
+
+issue298:
+  record: issue298 (Edition)
+  name: description
+  body: <p>This issue is number 298</p>

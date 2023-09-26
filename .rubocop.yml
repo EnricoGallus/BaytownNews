@@ -1,6 +1,10 @@
 inherit_from: .rubocop_todo.yml
 
-require: rubocop-rails
+require:
+  [rubocop-rails, rubocop-capybara, rubocop-minitest]
 
 AllCops:
   NewCops: enable
+  Exclude:
+    - db/**/*
+    - vendor/**/*

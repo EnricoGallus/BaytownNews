@@ -1,0 +1,5 @@
+<% if issue.previewable? %>
+  <%= image_tag issue.preview(resize_to_fit: [size, size]) %>
+<% else %>
+  <%= issue.filename %>
+<% end %>
