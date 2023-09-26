@@ -8,8 +8,11 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    env:
+      DATABASE_HOST: localhost
+
     services:
-      db:
+      postgres:
         image: postgres:15.4
         env:
           POSTGRES_USER: postgres
