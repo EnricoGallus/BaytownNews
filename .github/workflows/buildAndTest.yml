@@ -30,6 +30,8 @@ jobs:
         run: bundle exec brakeman
       - name: Bundler audit
         run: bundle exec bundler-audit
+      - name: Install dependencies
+        run: apt-get install libpoppler-glib-dev
       - name: Run tests
         run: |
           bin/rails db:create db:migrate
