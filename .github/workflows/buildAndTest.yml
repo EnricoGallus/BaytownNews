@@ -38,7 +38,9 @@ jobs:
         with:
           packages: libpoppler-glib-dev
           version: 1.0
-      - name: Run tests
-        run: |
-          bin/rails db:create db:migrate
-          bundle exec rake
+      - name: prepare database
+        run: bin/rails db:create db:migrate
+      - name: run unit-tests
+        run: bin/rails test
+      - name: run system-tests
+        run: bin/rails test:system

@@ -1,7 +1,7 @@
 inherit_from: .rubocop_todo.yml
 
 require:
-  [rubocop-rails, rubocop-capybara, rubocop-rspec]
+  [rubocop-rails, rubocop-capybara, rubocop-minitest]
 
 AllCops:
   NewCops: enable
