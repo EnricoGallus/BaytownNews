@@ -9,6 +9,7 @@ class EditionsTest < ApplicationSystemTestCase
 
   test 'visiting the index' do
     visit editions_url
+
     assert_selector 'h1', text: 'Editions'
   end
 

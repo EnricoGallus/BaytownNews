@@ -69,8 +69,8 @@ group :development do
   gem 'rubocop', require: false
   gem 'rubocop-capybara', require: false
   gem 'rubocop-discourse', require: false # without CI fails
-  gem 'rubocop-rails', require: false
   gem 'rubocop-minitest', require: false
+  gem 'rubocop-rails', require: false
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem 'web-console'
 
