@@ -11,9 +11,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Set up Docker Compose
-        uses: docker/compose-cli-action@v0
-
       - name: Build the stack
         run: docker-compose up -d
 
