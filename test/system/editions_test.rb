@@ -15,12 +15,13 @@ class EditionsTest < ApplicationSystemTestCase
 
   test 'should create edition' do
     visit editions_url
-    click_link 'New edition'
+    click_link 'New Edition'
 
-    fill_in 'Desc', with: @edition.description
-    fill_in 'Distribution', with: @edition.distribution
-    fill_in 'Number', with: @edition.number
-    fill_in 'Title', with: @edition.title
+    fill_in 'edition_description', with: @edition.description
+    fill_in 'edition_distribution', with: @edition.distribution
+    fill_in 'edition_number', with: @edition.number
+    fill_in 'edition_title', with: @edition.title
+    attach_file('edition_issue', "#{Rails.root}test/fixtures/files/issue297.pdf")
     click_link 'Create Edition'
 
     assert_text 'Edition was successfully created'
@@ -29,9 +30,9 @@ class EditionsTest < ApplicationSystemTestCase
 
   test 'should update Edition' do
     visit edition_url(@edition)
-    click_link 'Edit this edition', match: :first
+    click_link 'Edit', match: :first
 
-    fill_in 'Desc', with: @edition.description
+    fill_in 'edition_description', with: @edition.description
     fill_in 'Distribution', with: @edition.distribution
     fill_in 'Number', with: @edition.number
     fill_in 'Title', with: @edition.title
@@ -42,8 +43,9 @@ class EditionsTest < ApplicationSystemTestCase
   end
 
   test 'should destroy Edition' do
-    visit edition_url(@edition)
-    click_link 'Destroy this edition', match: :first
+    visit editions_url(@edition)
+    click_link 'Edit', match: :first
+    click_link 'Destroy', match: :first
 
     assert_text 'Edition was successfully destroyed'
   end

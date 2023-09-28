@@ -1,5 +1,7 @@
 ---
 EnableDefaultLinters: true
+exclude:
+  - 'lib/*/**'
 linters:
   ErbSafety:
     enabled: true
@@ -9,3 +11,5 @@ linters:
     rubocop_config:
       inherit_from:
         - .rubocop.yml
+      Style/FrozenStringLiteralComment:
+        Enabled: false
