@@ -1,2 +1,2 @@
-issue_297_blob: <%= ActiveStorage::FixtureSet.blob filename: "issue297.pdf", service_name: "test" %>
-issue_298_blob: <%= ActiveStorage::FixtureSet.blob filename: "issue298.pdf", service_name: "test" %>
+issue_january_blob: <%= ActiveStorage::FixtureSet.blob filename: "issue297.pdf", service_name: "test_fixtures" %>
+issue_february_blob: <%= ActiveStorage::FixtureSet.blob filename: "issue298.pdf", service_name: "test_fixtures" %>

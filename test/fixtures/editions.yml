@@ -1,11 +1,10 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+issue_january:
+  title: Issue January 2022
+  number: 297
+  distribution: 2022-01-05
 
-issue297:
-  title: Issue297
-  number: 1
-  distribution: 2023-03-18
-
-issue298:
-  title: Issue298
-  number: 2
-  distribution: 2023-03-18
+issue_february:
+  title: Issue February 2022
+  number: 298
+  distribution: 2022-02-02

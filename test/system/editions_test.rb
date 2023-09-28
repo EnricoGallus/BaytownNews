@@ -4,7 +4,7 @@ require 'application_system_test_case'
 
 class EditionsTest < ApplicationSystemTestCase
   setup do
-    @edition = editions(:issue297)
+    @edition = editions(:issue_january)
   end
 
   test 'visiting the index' do
