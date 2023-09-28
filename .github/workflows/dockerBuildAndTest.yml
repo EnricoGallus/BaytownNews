@@ -15,7 +15,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ~/.docker
-          key: docker-${{ runner.os }}-${{ hashFiles('**/Dockerfile') }}
+          key: docker-${{ runner.os }}-${{ hashFiles('Dockerfile') }}
 
       - name: Build the stack
         run: docker-compose up -d
