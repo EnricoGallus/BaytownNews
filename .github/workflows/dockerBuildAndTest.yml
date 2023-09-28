@@ -11,6 +11,12 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Cache Docker layers
+        uses: actions/cache@v2
+        with:
+          path: ~/.docker
+          key: docker-${{ runner.os }}-${{ hashFiles('**/Dockerfile') }}
+
       - name: Build the stack
         run: docker-compose up -d
 
