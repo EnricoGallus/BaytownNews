@@ -1,5 +1,5 @@
-<%= form_with(model: @edition, local: true) do |f| %>
-  <%= errors_for(@edition) %>
+<%= form_with(model: edition, local: true) do |f| %>
+  <%= errors_for(edition) %>
 
   <div class="form-group">
     <%= f.label :title %>
@@ -22,6 +22,6 @@
     <%= f.file_field :issue, class: 'form-control' %>
   </div>
   <div class="form-group">
-    <%= f.submit class: "btn btn-primary" %>
+    <%= f.submit class: 'btn btn-primary' %>
   </div>
 <% end %>

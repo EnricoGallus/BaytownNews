@@ -4,6 +4,7 @@ ja:
   edition:
     header:
       index: 'Editions'
+      show: 'Editions'
       new: 'New Editions'
       edit: 'Editing Editions'
     link:

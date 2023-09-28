@@ -1,4 +1,4 @@
-<h1>Editions</h1>
+<h1><% t('edition.header.show') %></h1>
 
 <dl>
   <dt><%= t('edition.show.title') %></dt>
@@ -11,7 +11,7 @@
   <dd><%= @edition.distribution %></dd>
   <dt><%= t('edition.show.issue') %></dt>
   <dd>
-    <%= render 'editions/editionIssuePreview', issue: @edition.issue, size: 500 %>
+    <%= render 'editions/edition_issue_preview', issue: @edition.issue, size: 500 %>
   </dd>
 </dl>
 <%= link_to t('edition.link.edit'), edit_edition_path(@edition) %> |
