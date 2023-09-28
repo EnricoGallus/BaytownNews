@@ -1,26 +1,26 @@
 <div id="<%= dom_id edition %>">
   <p>
-    <strong>Title:</strong>
+    <strong><%= t('edition.show.title') %></strong>
     <%= edition.title %>
   </p>
 
   <p>
-    <strong>Desc:</strong>
+    <strong><%= t('edition.show.description') %></strong>
     <%= edition.description %>
   </p>
 
   <p>
-    <strong>Number:</strong>
+    <strong><%= t('edition.show.number') %></strong>
     <%= edition.number %>
   </p>
 
   <p>
-    <strong>Distribution:</strong>
+    <strong><%= t('edition.show.distribution') %></strong>
     <%= edition.distribution %>
   </p>
 
   <p>
-    <strong>Issue:</strong>
+    <strong><%= t('edition.show.issue') %></strong>
     <%= link_to edition.issue.filename, edition.issue if edition.issue.attached? %>
   </p>
 

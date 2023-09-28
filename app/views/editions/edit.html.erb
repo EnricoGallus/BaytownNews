@@ -1,7 +1,7 @@
-<h1>Editing Editions</h1>
+<h1><%= t('edition.header.edit') %></h1>
 
 
 <%= render 'form', edition: @edition %>
 
-<%= link_to 'Show', @edition %> |
-<%= link_to 'Back', editions_path %>
+<%= link_to t('edition.link.show'), @edition %> |
+<%= link_to t('edition.link.back'), editions_path %>
