@@ -4,7 +4,7 @@ require 'test_helper'
 
 class EditionsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @edition = editions(:issue297)
+    @edition = editions(:issue_january)
   end
 
   test 'should get index' do

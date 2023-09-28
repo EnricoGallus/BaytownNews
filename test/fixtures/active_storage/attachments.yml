@@ -1,9 +1,9 @@
-issue_297:
-  name: issue297
-  record: one (Edition)
-  blob: issue_297_blob
+issue_january:
+  name: issue
+  record: issue_january (Edition)
+  blob: issue_january_blob
 
-issue_298:
-  name: issue298
-  record: two (Edition)
-  blob: issue_298_blob
+issue_february:
+  name: issue
+  record: issue_february (Edition)
+  blob: issue_february_blob
