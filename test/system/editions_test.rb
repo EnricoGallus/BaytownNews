@@ -6,6 +6,7 @@ class EditionsTest < ApplicationSystemTestCase
   setup do
     self.default_url_options = { locale: I18n.default_locale }
     @edition = editions(:issue_january)
+    @fixtures_directory_path = Rails.root.join(Rails.root, 'test/fixtures/files')
   end
 
   test 'visiting the index' do
@@ -22,7 +23,7 @@ class EditionsTest < ApplicationSystemTestCase
     fill_in 'edition_distribution', with: @edition.distribution
     fill_in 'edition_number', with: @edition.number
     fill_in 'edition_title', with: @edition.title
-    attach_file('edition_issue', Rails.root.join('/test/fixtures/files/issue297.pdf'))
+    attach_file('edition_issue', @fixtures_directory_path.join('issue297.pdf'))
     click_button 'Create Edition'
 
     assert_text I18n.t('edition.save.success')
@@ -37,7 +38,7 @@ class EditionsTest < ApplicationSystemTestCase
     fill_in 'edition_distribution', with: @edition.distribution
     fill_in 'edition_number', with: @edition.number
     fill_in 'edition_title', with: @edition.title
-    attach_file('edition_issue', Rails.root.join('/test/fixtures/files/issue297.pdf'))
+    attach_file('edition_issue', @fixtures_directory_path.join('issue297.pdf'))
     click_button 'Update Edition'
 
     assert_text 'Edition was successfully updated'
