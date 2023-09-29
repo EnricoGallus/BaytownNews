@@ -22,7 +22,7 @@ class EditionsTest < ApplicationSystemTestCase
     fill_in 'edition_distribution', with: @edition.distribution
     fill_in 'edition_number', with: @edition.number
     fill_in 'edition_title', with: @edition.title
-    attach_file('edition_issue', "#{Rails.root}/test/fixtures/files/issue297.pdf")
+    attach_file('edition_issue', Rails.root.join('/test/fixtures/files/issue297.pdf'))
     click_button 'Create Edition'
 
     assert_text I18n.t('edition.save.success')
@@ -37,7 +37,7 @@ class EditionsTest < ApplicationSystemTestCase
     fill_in 'edition_distribution', with: @edition.distribution
     fill_in 'edition_number', with: @edition.number
     fill_in 'edition_title', with: @edition.title
-    attach_file('edition_issue', "#{Rails.root}/test/fixtures/files/issue297.pdf")
+    attach_file('edition_issue', Rails.root.join('/test/fixtures/files/issue297.pdf'))
     click_button 'Update Edition'
 
     assert_text 'Edition was successfully updated'
