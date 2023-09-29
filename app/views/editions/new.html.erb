@@ -1,5 +1,5 @@
-<h1>New Editions</h1>
+<h1><%= t('edition.header.new') %></h1>
 
-<%= render 'form', edition: @edition %>
+<%= render 'form', edition: @edition, as: :edition %>
 
-<%= link_to 'Back', editions_path %>
+<%= link_to t('edition.link.back'), editions_path %>

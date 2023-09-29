@@ -2,9 +2,34 @@ ja:
   nav:
     editions: '創刊号'
   edition:
+    header:
+      index: 'Editions'
+      show: 'Editions'
+      new: 'New Editions'
+      edit: 'Editing Editions'
+    link:
+      show: 'Show'
+      edit: 'Edit'
+      destroy: 'Destroy'
+      new: 'New Edition'
+      back: 'Back'
+    index:
+      title: 'Title'
+      description: 'Description'
+      number: 'Number'
+      distribution: 'Distribution'
+      issue: 'Issue'
+    show:
+      title: 'Title:'
+      description: 'Description:'
+      number: 'Number:'
+      distribution: 'Distribution:'
+      issue: 'Issue:'
     save:
       success: 'Edition was successfully created.'
     update:
       success: 'Edition was successfully updated.'
     delete:
       success: 'Edition was successfully destroyed.'
+  index:
+    latest_issues: 'Latest Issues'

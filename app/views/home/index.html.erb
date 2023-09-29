@@ -1,10 +1,10 @@
 <div class="col-6">
-  <h1>Last Issues</h1>
+  <h1><%= t('index.latest_issues') %></h1>
   <% @editions.each do |edition| %>
     <div class="card mb-3" style="max-width: 540px;">
       <div class="row g-0">
         <div class="col-md-4">
-          <%= render 'editions/editionIssuePreview', issue: edition.issue, size: 200 %>
+          <%= render 'editions/edition_issue_preview', issue: edition.issue, size: 200 %>
         </div>
         <div class="col-md-8">
           <div class="card-body">
@@ -13,7 +13,9 @@
               <%= edition.description %>
             </p>
             <p class="card-text"><small class="text-muted"><%= edition.distribution %></small></p>
-            <%= link_to edition.issue.filename, rails_blob_path(edition.issue, disposition: 'attachment'), class: 'btn btn-primary' %>
+            <%= link_to edition.issue.filename,
+                        rails_blob_path(edition.issue, disposition: 'attachment'),
+                        class: 'btn btn-primary' %>
           </div>
         </div>
       </div>

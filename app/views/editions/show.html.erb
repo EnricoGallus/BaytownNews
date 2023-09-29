@@ -1,18 +1,18 @@
-<h1>Editions</h1>
+<h1><% t('edition.header.show') %></h1>
 
 <dl>
-  <dt>Title:</dt>
+  <dt><%= t('edition.show.title') %></dt>
   <dd><%= @edition.title %></dd>
-  <dt>Desc:</dt>
+  <dt><%= t('edition.show.description') %></dt>
   <dd><%= @edition.description %></dd>
-  <dt>Number:</dt>
+  <dt><%= t('edition.show.number') %></dt>
   <dd><%= @edition.number %></dd>
-  <dt>Distribution:</dt>
+  <dt><%= t('edition.show.distribution') %></dt>
   <dd><%= @edition.distribution %></dd>
-  <dt>Issue:</dt>
+  <dt><%= t('edition.show.issue') %></dt>
   <dd>
-    <%= render 'editions/editionIssuePreview', issue: @edition.issue, size: 500 %>
+    <%= render 'editions/edition_issue_preview', issue: @edition.issue, size: 500 %>
   </dd>
 </dl>
-<%= link_to 'Edit', edit_edition_path(@edition) %> |
-<%= link_to 'Back', editions_path %>
+<%= link_to t('edition.link.edit'), edit_edition_path(@edition) %> |
+<%= link_to t('edition.link.back'), editions_path %>
