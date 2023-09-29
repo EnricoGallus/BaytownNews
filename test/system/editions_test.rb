@@ -45,9 +45,10 @@ class EditionsTest < ApplicationSystemTestCase
   end
 
   test 'should destroy Edition' do
-    visit editions_url(@edition)
-    click_link 'Edit', match: :first
-    click_link 'Destroy', match: :first
+    visit editions_url
+    accept_alert do
+      click_link 'Destroy', match: :first
+    end
 
     assert_text 'Edition was successfully destroyed'
   end
