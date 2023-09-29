@@ -4,6 +4,7 @@ require 'test_helper'
 
 class EditionsControllerTest < ActionDispatch::IntegrationTest
   setup do
+    self.default_url_options = { locale: I18n.default_locale }
     @edition = editions(:issue_january)
   end
 
