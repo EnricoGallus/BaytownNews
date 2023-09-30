@@ -30,6 +30,7 @@ ja:
     update:
       success: 'Edition was successfully updated.'
     delete:
+      confirm: 'Are you sure?'
       success: 'Edition was successfully destroyed.'
   index:
     latest_issues: 'Latest Issues'

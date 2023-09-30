@@ -19,10 +19,8 @@ services:
       - "3000:3000"
     depends_on:
       - db
-      - selenium-hub
     environment:
       RAILS_ENV: development
-      SELENIUM_DRIVER_URL: http://selenium-hub:4444/wd/hub
 
   chrome:
     image: seleniarm/node-chromium:latest
@@ -41,6 +39,18 @@ services:
       - "4442:4442"
       - "4443:4443"
       - "4444:4444"
+
+  system-tests:
+    image: 'enchan/baytown_news'
+    command: bundle exec rake test:system
+    volumes:
+      - .:/app
+    depends_on:
+      - web
+      - chrome
+    environment:
+      RAILS_ENV: test
+      SELENIUM_DRIVER_URL: http://selenium-hub:4444/wd/hub
 
 volumes:
   postgres_data:

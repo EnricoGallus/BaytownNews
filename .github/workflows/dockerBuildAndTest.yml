@@ -50,6 +50,10 @@ jobs:
       - name: run unit-tests
         run: docker-compose run web bin/rails test
 
-      # todo chrome version not working, also no chrome in our container
-      #- name: run system-tests
-      #  run: bin/rails test:system
+      - name: run system-tests
+        run: docker-compose run system-tests
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v3
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}

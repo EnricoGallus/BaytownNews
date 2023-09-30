@@ -28,6 +28,12 @@ Also specified in ``.ruby-version``
 
 ## Development
 
+### architecture issues
+Therefor that the bundler is executed locally on an arm platform, the linux platform is missing in the bundler lockfile.
+Add it by executing the following command ``bundle lock --add-platform x86_64-linux``
+
+### Github Actions
+
 Each push or pull-request in github will trigger a github-action that runs all security checks and linters.
 It will also run all the projects tests.
 
