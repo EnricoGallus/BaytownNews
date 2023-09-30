@@ -71,6 +71,8 @@ group :development do
   gem 'rubocop-discourse', require: false # without CI fails
   gem 'rubocop-minitest', require: false
   gem 'rubocop-rails', require: false
+  gem 'simplecov'
+  gem 'simplecov-cobertura'
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem 'web-console'
 
