@@ -53,6 +53,9 @@ gem 'image_processing', '~> 1.2'
 # for pdf preview
 gem 'poppler'
 
+gem "sentry-ruby"
+gem "sentry-rails"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   # fixed on 1.7.0 due to issue with dependencies on github-actions
