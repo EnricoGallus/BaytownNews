@@ -13,6 +13,7 @@ gem 'sprockets-rails'
 
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
+gem 'pg_search'
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '~> 6.4.0'
@@ -65,6 +66,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'annotate'
   gem 'bootstrap_views_generator'
   gem 'brakeman'
   gem 'bundler-audit', require: false

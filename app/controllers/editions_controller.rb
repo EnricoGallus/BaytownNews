@@ -6,7 +6,11 @@ class EditionsController < ApplicationController
 
   # GET /editions or /editions.json
   def index
-    @editions = Edition.all
+    @editions = if params[:query].present?
+                  Edition.search(params[:query])
+                else
+                  Edition.all
+                end
   end
 
   # GET /editions/1 or /editions/1.json
