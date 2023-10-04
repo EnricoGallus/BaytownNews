@@ -1,7 +1,7 @@
 <h1><%= t('edition.header.index') %></h1>
 
 <%= form_tag(editions_url, method: :get) do %>
-  <%= text_field_tag :query, params[:query], placeholder: t('edition.index.search.query') %>
+  <%= text_field_tag :query, params[:query], placeholder: t('edition.index.search.query'), autocomplete: 'on' %>
   <%= submit_tag t('edition.index.search.submit') %>
 <% end %>
 
