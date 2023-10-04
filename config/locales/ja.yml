@@ -19,6 +19,9 @@ ja:
       number: 'Number'
       distribution: 'Distribution'
       issue: 'Issue'
+      search:
+        query: 'Search editions...'
+        submit: 'Search'
     show:
       title: 'Title:'
       description: 'Description:'
