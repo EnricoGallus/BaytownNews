@@ -11,7 +11,6 @@
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #
-# model for one issue of the Baytown News magazine and all its properties
 class Edition < ApplicationRecord
   has_one_attached :issue
   has_rich_text :description
